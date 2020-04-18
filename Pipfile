@@ -13,9 +13,10 @@ platformio = "*"
 [packages]
 pyserial = "*"
 invoke = "*"
+kivy = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
 
 [scripts]
 test = "python -m pytest --cache-clear"
