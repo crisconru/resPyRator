@@ -1,20 +1,23 @@
-# Respirador
+# Respyrator
 
-[![Build Status](https://travis-ci.org/Respyrator/respirador.svg?branch=master)](https://travis-ci.org/Respyrator/respirador)
+Si quieres contribuir, primero lee la sección de contributing.
 
 ## Instalación
 
-Primero, se necesita instalar invoke y pipenv, así que
+Necesitas tener instalado Python 3.8 en tu sistema (puedes usar pyenv o cualquier otro método para instalarlo). Luego instala pipenv.
 
-	pip install pipenv
-	pipenv install invoke
+```bash
+pip install pipenv
+```
 
-Necesitas tener instalado Python 3.8 en tu sistema, usando pyenv o cualquier otro método. Tras activarlo con `pyenv global 3.8.2`, por ejemplo, escribe
+Ya esta todo para poder instalar el proyecto.
 
-    pipenv install
-	
-Y a continuación
+```bash
+pipenv install
+```
 
-    pipenv shell
-	
-Para activarlo.
+Si necesitas activar el virtualenv creado para para trabajar, usa este comando para activarlo.
+
+```bash
+pipenv shell
+```
