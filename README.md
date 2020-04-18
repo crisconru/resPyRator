@@ -4,7 +4,7 @@ Si quieres contribuir, primero lee la sección de contributing.
 
 ## Instalación
 
-Necesitas tener instalado Python 3.8 en tu sistema (puedes usar pyenv o cualquier otro método para instalarlo). Luego instala pipenv.
+Necesitas tener instalado Python 3.7 en tu sistema (puedes usar pyenv o cualquier otro método para instalarlo). Luego instala pipenv.
 
 ```bash
 pip install pipenv
