@@ -12,18 +12,10 @@ platformio = "*"
 
 [packages]
 pyserial = "*"
-mkdocs = "*"
-mkdocs-material = "*"
-pygments = "*"
-pymdown-extensions = "*"
-mkdocs-minify-plugin = "*"
-pytest = "*"
 invoke = "*"
 
 [requires]
 python_version = "3.8"
 
 [scripts]
-serve = "mkdocs serve"
-deploy = "mkdocs gh-deploy"
 test = "python -m pytest --cache-clear"
