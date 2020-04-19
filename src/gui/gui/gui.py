@@ -13,3 +13,26 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Respyrator.  If not, see <http://www.gnu.org/licenses/>.
+
+# Built-in --------------------------------------------------------------------
+# Installed -------------------------------------------------------------------
+from kivy.app import App
+from kivy.clock import Clock
+from kivy.uix.screenmanager import ScreenManager, NoTransition
+# Coded -----------------------------------------------------------------------
+# Program ---------------------------------------------------------------------
+
+
+class GuiManager(ScreenManager):
+    pass
+
+
+class GuiApp(App):
+
+    def build(self):
+        from kivy.uix.button import Button
+        return Button(text='Hola mundo')
+
+
+if __name__ == "__main__":
+    GuiApp().run()

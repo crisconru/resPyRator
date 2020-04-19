@@ -17,7 +17,7 @@
 import setuptools
 
 setuptools.setup(
-    name="respyrator-gui",
+    name="kivygui",
     version="0.0.1",
     description="Respyrator graphical user interface",
     url="https://respyrator.github.io",
