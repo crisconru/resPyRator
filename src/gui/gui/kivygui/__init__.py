@@ -18,27 +18,34 @@
 from pathlib import Path
 import configparser
 # Installed -------------------------------------------------------------------
+from kivy.config import Config
+from kivy.core.window import Window
+from kivy.utils import get_color_from_hex
 # Coded -----------------------------------------------------------------------
-from src import logapp
+from gui import logapp, colors
 # Program ---------------------------------------------------------------------
-LOG = 'GUI:'
-
-__all__ = ['logapp']
+LOG = 'KIVYGUI:'
 
 BASE_DIR = Path(__file__).resolve().parents[0]
-GUI_CONFIG = BASE_DIR / 'guiconfig.ini'
-cfg = configparser.ConfigParser()
-cfg.read(str(GUI_CONFIG))
+KIVY_CONFIG = BASE_DIR / 'kivyconfig.ini'
+if KIVY_CONFIG.exists():
+    Config.read(str(KIVY_CONFIG))
+    logapp.debug(f'{LOG} Kivy configuration completed')
+else:
+    logapp.error(f'{LOG} Kivy not well configured')
 # COLORs
-gui_colors = {
-    'background': cfg.get('COLOR', 'background'),
-    'black': cfg.get('COLOR', 'black'),
-    'yellow': cfg.get('COLOR', 'yellow'),
-    'white': cfg.get('COLOR', 'white')
-}
-# IMGs
-gui_img = {}
-# TXTs
-gui_txts = {}
-
-logapp.info(f'{LOG} configuration completed')
+colors = {k: get_color_from_hex(v) for k, v in gui_colors}
+print(f'COLORES = {colors}')
+# Background Window color
+Window.clearcolor = colors.get('brand', (0, 1, 0, 1))
+logapp.debug(f'{LOG} Window background to {Window.clearcolor}')
+# Load kv files
+KV_FILES = BASE_DIR
+'''
+if KV_FILES:
+    from . import splashscreen, loginscreen, infoscreen, \
+        feedbackscreen, chargescreen, bottlesscreen
+    __all__ = ['splashscreen', 'loginscreen', 'infoscreen',
+               'feedbackscreen', 'chargescreen', 'bottlesscreen']
+logapp.info(f'{LOG} screens loaded')
+'''

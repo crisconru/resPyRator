@@ -14,17 +14,15 @@
 # You should have received a copy of the GNU General Public License
 # along with Respyrator.  If not, see <http://www.gnu.org/licenses/>.
 
-import setuptools
+#:kivy 1.11
 
-setuptools.setup(
-    name="respyrator-gui",
-    version="0.0.1",
-    description="Respyrator graphical user interface",
-    url="https://respyrator.github.io",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
-    ],
-    python_requires=">=3.6",
-)
+<LoadingScreen>:
+    name: 'loading_screen'
+    id: loading_screen
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'cneter'
+        padding: 10
+
+        Button:
+            text: 'Hola mundo saecio'

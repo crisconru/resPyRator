@@ -14,17 +14,24 @@
 # You should have received a copy of the GNU General Public License
 # along with Respyrator.  If not, see <http://www.gnu.org/licenses/>.
 
-import setuptools
+# Built-in --------------------------------------------------------------------
+# Installed -------------------------------------------------------------------
+from kivy.app import App
+from kivy.clock import Clock
+from kivy.uix.screenmanager import ScreenManager, NoTransition
+# Coded -----------------------------------------------------------------------
+# Program ---------------------------------------------------------------------
 
-setuptools.setup(
-    name="respyrator-gui",
-    version="0.0.1",
-    description="Respyrator graphical user interface",
-    url="https://respyrator.github.io",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
-    ],
-    python_requires=">=3.6",
-)
+
+class GuiManager(ScreenManager):
+    pass
+
+
+class GuiApp(App):
+
+    def build(self):
+        return GuiManager(Transition=NoTransition())
+
+
+if __name__ == "__main__":
+    GuiApp().run()
